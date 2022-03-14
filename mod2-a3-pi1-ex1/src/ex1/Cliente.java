@@ -4,12 +4,6 @@ import java.math.BigDecimal;
 
 public abstract class Cliente {
 
-    Deposito deposito = new Deposito();
-    Transferencia transferencia = new Transferencia();
-    ConsultaDeSaldo consultaDeSaldo = new ConsultaDeSaldo();
-    SaqueEmDinheiro saqueEmDinheiro = new SaqueEmDinheiro();
-    PagamentodeServicos pagamentodeServicos = new PagamentodeServicos();
-
     private String id;
     private String nome;
     private BigDecimal saldo;
@@ -47,21 +41,21 @@ public abstract class Cliente {
     }
 
     public void realizaDeposito(BigDecimal valor) {
-        deposito.transacaoNaoOk();
+        Transacao.transacaoNaoOk();
     }
 
     public void realizaTransferencia(Cliente clienteBeneficiado, BigDecimal valor) {
-        transferencia.transacaoNaoOk();
+        Transacao.transacaoNaoOk();
     }
 
     public void realizaSaqueEmDinheiro(BigDecimal valor) {
-        saqueEmDinheiro.transacaoNaoOk();
+        Transacao.transacaoNaoOk();
     }
 
     public void realizaConsultaDeSaldo() {
-        consultaDeSaldo.transacaoNaoOk();
+        Transacao.transacaoNaoOk();
     }
     public void realizaPagamentoDeServicos() {
-        pagamentodeServicos.realizaPagamentodeServicos();
+        Transacao.transacaoNaoOk();
     }
 }

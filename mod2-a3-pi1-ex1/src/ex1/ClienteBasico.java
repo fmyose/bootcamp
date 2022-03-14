@@ -13,19 +13,19 @@ public class ClienteBasico extends Cliente {
 
     @Override
     public void realizaSaqueEmDinheiro(BigDecimal valor) {
-        saqueEmDinheiro.transacaoOk();
+        Transacao.transacaoOk();
         SaqueEmDinheiro.realizaSaqueEmDinheiro(this, valor);
     }
 
     @Override
     public void realizaConsultaDeSaldo() {
-        consultaDeSaldo.transacaoOk();
-        consultaDeSaldo.realizaConsulta(this);
+        Transacao.transacaoOk();
+        ConsultaDeSaldo.realizaConsulta(this);
     }
 
     @Override
     public void realizaPagamentoDeServicos() {
-        pagamentodeServicos.transacaoOk();
-        pagamentodeServicos.realizaPagamentodeServicos();
+        Transacao.transacaoOk();
+        PagamentodeServicos.realizaPagamentodeServicos();
     }
 }

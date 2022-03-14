@@ -13,13 +13,13 @@ public class ClienteCobrador extends Cliente {
 
     @Override
     public void realizaSaqueEmDinheiro(BigDecimal valor) {
-        saqueEmDinheiro.transacaoOk();
+        Transacao.transacaoOk();
         SaqueEmDinheiro.realizaSaqueEmDinheiro(this, valor);
     }
 
     @Override
     public void realizaConsultaDeSaldo() {
-        consultaDeSaldo.transacaoOk();
-        consultaDeSaldo.realizaConsulta(this);
+        Transacao.transacaoOk();
+        ConsultaDeSaldo.realizaConsulta(this);
     }
 }

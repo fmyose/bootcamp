@@ -2,13 +2,11 @@ package ex1;
 
 public interface Transacao {
 
-    default boolean transacaoOk() {
-        System.out.println("Transacao OK");
-        return true;
+    static boolean transacaoOk() {
+        return false;
     }
 
-    default boolean transacaoNaoOk() {
-        System.out.println("Transacao nao OK");
+    static boolean transacaoNaoOk() {
         return false;
     }
 

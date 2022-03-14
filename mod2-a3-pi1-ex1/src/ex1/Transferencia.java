@@ -3,7 +3,7 @@ package ex1;
 import java.math.BigDecimal;
 
 public class Transferencia implements Transacao {
-    public void realizaTransferencia(Cliente origem, Cliente destino, BigDecimal valor) {
+    public static void realizaTransferencia(Cliente origem, Cliente destino, BigDecimal valor) {
         if (origem.getSaldo().compareTo(valor) != -1) {
             origem.setSaldo(origem.getSaldo().subtract(valor));
             destino.setSaldo(destino.getSaldo().add(valor));

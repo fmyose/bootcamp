@@ -4,9 +4,6 @@ import java.math.BigDecimal;
 
 public class ClienteExecutivo extends Cliente {
 
-    Deposito deposito = new Deposito();
-    Transferencia transferencia = new Transferencia();
-
     public ClienteExecutivo() {
     }
 
@@ -16,14 +13,14 @@ public class ClienteExecutivo extends Cliente {
 
     @Override
     public void realizaDeposito(BigDecimal valor) {
-        saqueEmDinheiro.transacaoOk();
-        deposito.realizaDeposito(this, valor);
+        Transacao.transacaoOk();
+        Deposito.realizaDeposito(this, valor);
     }
 
     @Override
     public void realizaTransferencia(Cliente clienteBeneficiado, BigDecimal valor) {
-        saqueEmDinheiro.transacaoOk();
-        transferencia.realizaTransferencia(this, clienteBeneficiado, valor);
+        Transacao.transacaoOk();
+        Transferencia.realizaTransferencia(this, clienteBeneficiado, valor);
     }
 
 }
