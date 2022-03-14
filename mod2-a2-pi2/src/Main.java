@@ -5,5 +5,8 @@ public class Main {
         PraticaExcecoes praticaExcecoes = new PraticaExcecoes();
         praticaExcecoes.divisao();
 
+        System.out.println("--------------------------------");
+        Distribuidora distribuidora = new Distribuidora();
+        distribuidora.executar();
     }
 }
